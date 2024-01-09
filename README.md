@@ -9,8 +9,8 @@
   2. 测试小度音箱平台定时任务逻辑有调整：之前是平台发送定时指令，由插件定时触发；现在是平台定时后发送控制指令 https://bbs.hassbian.com/thread-21059-1-1.html
   3. 实际在小度开放平台上配置调试授权的时候，Oath2跳转的连接里面是https://xiaodu-dbp.baidu.com
   4. havcs.reload 报错，报错信息 havcs的插件代码里面调用了ha的 `async_get_registry` 方法不存在，搜索发现在另一个项目的issue里面看到这个方法在去年就已经弃用，因为我的ha版本是相当新的，已经被官方移除了。https://github.com/rospogrigio/localtuya/issues/855
-- 2020-10-19
-  1. 增加fan类型设置模式指令支持（部分，不同平台模式的定义与插件的定义有差异）
+- 2022-03-19
+  1. ha升级到2022.3后，所有"with async_timeout.timeout(5, loop=hass.loop):"中 loop参数弃用出错了，说很早就提示了。我是每次出问题了才知道。https://bbs.hassbian.com/thread-15591-1-1.html
 - 2020-10-14
   1. 修复自动生成平台设备类型的逻辑导致无法正确返回设备类型
   2. 修复manifest.json的mqtt依赖导致不启用mqtt插件无法启动本插件
