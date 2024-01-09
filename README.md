@@ -1,14 +1,14 @@
 ## 备注
-- master分支为最新功能并适配更高的HA版本号，如要使用旧版本插件到[release][1]页面下载
-- havcs经历3次大更新（配置使用方法有变动），目前为havcs v3，使用教程[传送门][2]
-- HA版本迭代较快，无法保证一一适配，进行功能更新会使用新版本HA进行测试
+- HAVCS 插件开源地址：https://github.com/cnk700i/havcs
+- 论坛教程：https://bbs.hassbian.com/thread-15591-5-1.html
+- havcs作者的官方文档（https://ljr.im/articles/plugins-havcs-edible-instructions/）
 - 建议使用版本： 2021.5.4
 ## 更新日志
-- 2021-05-26
-  1. HA 2021.5.4版本测试
-  2. 测试小度音箱平台定时任务逻辑有调整：之前是平台发送定时指令，由插件定时触发；现在是平台定时后发送控制指令
-  3. 修复添加集成重复注册web菜单错误
-  4. 集成设置增加ha_url设置（自动判断会优先读取旧版本.storage/core.config的ip配置导致不准确）
+- 2023-05-26
+  1. HA版本：2023.5.2 
+  2. 测试小度音箱平台定时任务逻辑有调整：之前是平台发送定时指令，由插件定时触发；现在是平台定时后发送控制指令 https://bbs.hassbian.com/thread-21059-1-1.html
+  3. 实际在小度开放平台上配置调试授权的时候，Oath2跳转的连接里面是https://xiaodu-dbp.baidu.com
+  4. havcs.reload 报错，报错信息 havcs的插件代码里面调用了ha的 `async_get_registry` 方法不存在，搜索发现在另一个项目的issue里面看到这个方法在去年就已经弃用，因为我的ha版本是相当新的，已经被官方移除了。https://github.com/rospogrigio/localtuya/issues/855
 - 2020-10-19
   1. 增加fan类型设置模式指令支持（部分，不同平台模式的定义与插件的定义有差异）
 - 2020-10-14
